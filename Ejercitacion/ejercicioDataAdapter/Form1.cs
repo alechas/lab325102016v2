@@ -46,6 +46,10 @@ namespace ejercicioDataAdapter
 
             this._dataAdapter = new SqlDataAdapter("Select * from Clientes", this._Connection);//asi le estoy pasando el selectCommand
 
+            _Update.Parameters.Add(new SqlParameter("@nombre",SqlDbType.VarChar,50,"nombre"));//Cargo el comando update
+            this._dataAdapter.UpdateCommand = _Update;
+
+
         }
 
         private void cargarFillToolStripMenuItem_Click(object sender, EventArgs e)
